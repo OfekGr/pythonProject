@@ -8,6 +8,6 @@ while num1!=0:
         count += 1
         num1 = int(input("insert number: "))
     else:
-        num1 = int(input("insert number: "))
+        num1 = int(input("insert number:"))
 else:
     print("amount of numbers that can be divided by 3 or 7 is:", count)
