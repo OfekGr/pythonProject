@@ -3,11 +3,17 @@ import math
 
 class Animal:
 
-    #default hunger & energy is 5
+    #default hunger & energy is 5 and must be between 0 - 10
     def __init__(self, name, hunger=5, energy=5):
         self.name = name
         self.hunger = hunger
+        if hunger<0 and hunger>10:
+            print("hunger level not between 0-10, has been set to default (5)")
+            self.hunger=5
         self.energy = energy
+        if energy<0 and energy>10:
+            print("energy level not between 0-10, has been set to default (5)")
+            self.energy=5
 
 
     def __str__(self):
