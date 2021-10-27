@@ -15,3 +15,8 @@ class DeckOfCards:
     def deal_one(self):
         return random.choice.cards_shuffle()
 
+    def __str__(self):
+        return f"cards in hand: {self.cards}"
+
+    def __repr__(self):
+        return f"cards in hand: {self.cards}"
