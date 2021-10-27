@@ -1,10 +1,11 @@
 from game_cards.Card import Card
 from game_cards.CardGame import CardGame
 
-game=CardGame(input("Insert gae1: "), input("Insert gae2: "), 26)
+game=CardGame(input("Insert player1: "), input("Insert player2: "), 26)
 game.new_game()
 print("Player name: ", game.playerOne.name, "Player cards: ",game.playerOne.playerhand)
 print("Player name: ", game.playerTwo.name, "Player cards: ",game.playerTwo.playerhand)
+game.new_game()
 
 
 for i in range(10):

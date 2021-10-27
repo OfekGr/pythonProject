@@ -15,7 +15,7 @@ class CardGame:
             self.playerOne.set_hand(self.deck)
             self.playerTwo.set_hand(self.deck)
         else:
-            print("y r u gae")
+            print("game no bueno, already running")
 
 
     def get_winner(self):
