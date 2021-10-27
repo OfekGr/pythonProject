@@ -9,11 +9,16 @@ class DeckOfCards:
                 self.cards.append(Card(v,s))
 
 
+
+
+
     def cards_shuffle(self):
         random.shuffle(self.cards)
+        print(self.cards)
 
     def deal_one(self):
-        return random.choice.cards_shuffle()
+        rand_card=random.choice.cards_shuffle()
+        return rand_card.pop
 
     def __str__(self):
         return f"cards in hand: {self.cards}"
