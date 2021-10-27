@@ -2,27 +2,29 @@ from game_cards.DeckOfCards import DeckOfCards
 from game_cards.Player import Player
 
 class CardGame:
-    def __init__(self, p1name, p2name, num_of_cards):
-        self.p1name=p1name
-        self.p2name=p2name
-        self.num_of_cards=num_of_cards
-        p1name=Player
-        p2name=Player
-        num_of_cards=DeckOfCards
+    def __init__(self, p1name, p2name, num_of_cards = 26):
+        self.playerOne=Player(p1name, num_of_cards)
+        self.playerTwo=Player(p2name, num_of_cards)
+        self.deck = DeckOfCards()
+        self.gameOn=False
 
     def new_game(self):
-        game_ongoing=1
-        DeckOfCards.cards_shuffle()
-        Player.set_hand(self.p1name)
-        Player.set_hand(self.p2name)
+        if self.gameOn==False:
+            self.gameOn=True
+            self.deck.cards_shuffle()
+            self.playerOne.set_hand(self.deck)
+            self.playerTwo.set_hand(self.deck)
+        else:
+            print("y r u gae")
+
 
     def get_winner(self):
-        if len(Player.self.playerhand(self.p1name)) < len(Player.self.playerhand(self.p2name)):
-            game_ongoing=0
-            return f"game ended, {self.p2name} is the winner!"
-        elif len(Player.self.playerhand(self.p1name)) > len(Player.self.playerhand(self.p2name)):
-            game_ongoing = 0
-            return f"game ended, {self.p1name} is the winner!"
-        elif len(Player.self.playerhand(self.p1name)) == len(Player.self.playerhand(self.p2name)):
-            game_ongoing = 0
+        if len(self.playerOne.playerhand) < len(self.playerTwo.playerhand):
+            self.gameOn=False
+            return f"game ended, {self.playerTwo.name} is the winner!"
+        elif len(self.playerOne.playerhand) > len(self.playerTwo.playerhand):
+            self.gameOn=False
+            return f"game ended, {self.playerOne.name} is the winner!"
+        elif len(self.playerOne.playerhand) == len(self.playerTwo.playerhand):
+            self.gameOn=False
             return None

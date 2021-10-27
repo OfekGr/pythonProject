@@ -4,7 +4,7 @@ import random
 class DeckOfCards:
     def __init__(self):
         self.cards= []
-        for v in range(13):
+        for v in range(2,15):
             for s in range(4):
                 self.cards.append(Card(v,s))
 
@@ -12,7 +12,9 @@ class DeckOfCards:
         return random.shuffle(self.cards)
 
     def deal_one(self):
-        removed_card=self.cards.pop(random.choice(self.cards_shuffle()))
+        test=random.choice(range(len(self.cards)))
+        removed_card=self.cards[test]
+        self.cards.pop(test)
         return removed_card
 
     def __str__(self):
