@@ -4,21 +4,16 @@ import random
 class DeckOfCards:
     def __init__(self):
         self.cards= []
-        for v in range (2,15):
+        for v in range(13):
             for s in range(4):
                 self.cards.append(Card(v,s))
 
-
-
-
-
     def cards_shuffle(self):
-        random.shuffle(self.cards)
-        print(self.cards)
+        return random.shuffle(self.cards)
 
     def deal_one(self):
-        rand_card=random.choice.cards_shuffle()
-        return rand_card.pop
+        removed_card=self.cards.pop(random.choice(self.cards_shuffle()))
+        return removed_card
 
     def __str__(self):
         return f"cards in hand: {self.cards}"
