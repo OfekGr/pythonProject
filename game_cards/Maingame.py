@@ -5,10 +5,10 @@ game=CardGame(input("Insert player1: "), input("Insert player2: "), 26)
 game.new_game()
 print("Player name: ", game.playerOne.name, "Player cards: ",game.playerOne.playerhand)
 print("Player name: ", game.playerTwo.name, "Player cards: ",game.playerTwo.playerhand)
-game.new_game()
 
 
-for i in range(10):
+for i in range(1,11):
+    print("round: ",i)
     p1card=game.playerOne.get_card()
     p2card=game.playerTwo.get_card()
     print({game.playerOne.name}, " card: ", {p1card.value, p1card.suit})
