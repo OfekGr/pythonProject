@@ -1,11 +1,11 @@
-
+#Define Card
 class Card:
-
+#each card has 2 variables, value and suit
     def __init__(self, value, suit):
         self.value=value
         self.suit=suit
 
-
+#Comparison between cards, returns boolean
     def __gt__(self, current_card, other_card):
         if current_card.value > other_card.value:
             return True
@@ -17,6 +17,7 @@ class Card:
         else:
             return False
 
+#Converting card values into strings (card name)
     def check_sign(self):
         if self.value == 2 and self.suit == 0:
             return  "Two of Diamonds"
