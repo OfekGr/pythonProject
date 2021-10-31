@@ -24,6 +24,7 @@ for i in range(1,11):
         print({game.playerTwo.name}, "wins the round!")
 print(game.playerOne.name, "has ", len(game.playerOne.playerhand), "cards in hand.")
 print(game.playerTwo.name, "has ", len(game.playerTwo.playerhand), "cards in hand.")
-print(game.get_winner())
-
-
+if len(game.playerOne.playerhand) == len(game.playerTwo.playerhand):
+    print("Game ended, its a tie!")
+else:
+    print(game.get_winner())
