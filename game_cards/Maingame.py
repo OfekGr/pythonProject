@@ -22,7 +22,8 @@ for i in range(1,11):
         game.playerTwo.add_card(p2card)
         game.playerTwo.add_card(p1card)
         print({game.playerTwo.name}, "wins the round!")
-
+print(game.playerOne.name, "has ", len(game.playerOne.playerhand), "cards in hand.")
+print(game.playerTwo.name, "has ", len(game.playerTwo.playerhand), "cards in hand.")
 print(game.get_winner())
 
 
