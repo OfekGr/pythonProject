@@ -11,8 +11,8 @@ for i in range(1,11):
     print("round: ",i)
     p1card=game.playerOne.get_card()
     p2card=game.playerTwo.get_card()
-    print({game.playerOne.name}, " card: ", {p1card.value, p1card.suit})
-    print({game.playerTwo.name}, " card: ", {p2card.value, p2card.suit})
+    print({game.playerOne.name}, " card: ", {Card.check_sign(p1card)})
+    print({game.playerTwo.name}, " card: ", {Card.check_sign(p2card)})
     winner=Card.__gt__(Card, p1card, p2card)
     if winner==True:
         game.playerOne.add_card(p2card)
